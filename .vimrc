@@ -1,6 +1,3 @@
-" Tanky Woo <me@tankywoo.com>
-" https://tankywoo.com
-
 "========="
 " General "
 "========="
@@ -28,7 +25,7 @@ set smartindent
 set showmatch " When a bracket is inserted, briefly jump to the matching one
 set showmode " Show the mode
 set nobackup " No backup
-set cursorline " Highlighter the current line
+"set cursorline " Highlighter the current line
 "hi cursorline gui=UNDERLINE cterm=UNDERLINE
 set fileencodings=utf-8,gb18030,cp936,big5 " Set the encode
 set t_Co=256 " If under tty, use 256
@@ -36,8 +33,8 @@ set pastetoggle=<F10> "" Bind `F10` to `:set paste`
 set backspace=2 " same as ":set backspace=indent,eol,start" in vim7.4
 
 " Display `tab` and `trail space`
-set list
-set listchars=tab:>-,trail:.
+"set list
+"set listchars=tab:>-,trail:.
 
 " NOTE: vim <leader> default is `\`, can `:help <leader>` to see more.
 
@@ -60,7 +57,7 @@ hi ColorColumn ctermbg=lightgrey guibg=lightgreya  " Highlighter cc
 function HeaderPython()
     call setline(1, "#!/usr/bin/env python")
     call append(1,  "# -*- coding: utf-8 -*-")
-    call append(2,  "# Tanky Woo @ " . strftime('%Y-%m-%d', localtime()))
+    call append(2,  "# Jst @ " . strftime('%Y-%m-%d', localtime()))
     normal G
     normal o
     normal o
@@ -70,7 +67,7 @@ autocmd bufnewfile *.py call HeaderPython()
 " .sh file auto add header
 function HeaderBash()
     call setline(1, "#!/bin/bash")
-    call append(1,  "# Tanky Woo @ " . strftime('%Y-%m-%d %T', localtime()))
+    call append(1,  "# Jst @ " . strftime('%Y-%m-%d %T', localtime()))
     normal G
     normal o
     normal o
@@ -174,10 +171,10 @@ au BufRead,BufNewFile *.md set filetype=markdown  " .md default is modula2
 
 " Better Rainbow Parentheses
 " :RainbowParenthesesToggle            " Toggle it on/off
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
 
 " davidhalter/jedi-vim
 autocmd FileType python setlocal completeopt-=preview    " disable docstring
@@ -258,7 +255,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 let g:tagbar_type_markdown = {
     \ 'ctagstype': 'markdown',
-    \ 'ctagsbin' : '/Users/TankyWoo/.dotfiles/markdown2ctags.py',
+    \ 'ctagsbin' : '/Users/jst/.dotfiles/markdown2ctags.py',
     \ 'ctagsargs' : '-f - --sort=yes',
     \ 'kinds' : [
         \ 's:sections',
